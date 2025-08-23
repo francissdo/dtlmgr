@@ -18,6 +18,25 @@
 [Xx]64/
 [Xx]86/
 [Bb]uild/
+
+# React/Node.js specific
+dtlmgr/node_modules/
+dtlmgr/build/
+dtlmgr/.env.local
+dtlmgr/.env.development.local
+dtlmgr/.env.test.local
+dtlmgr/.env.production.local
+dtlmgr/npm-debug.log*
+dtlmgr/yarn-debug.log*
+dtlmgr/yarn-error.log*
+
+# API specific
+DtlApi/bin/
+DtlApi/obj/
+DtlApi/logs/
+DtlApi/*.db
+DtlApi/*.db-shm
+DtlApi/*.db-wal
 bld/
 [Bb]in/
 [Oo]bj/
