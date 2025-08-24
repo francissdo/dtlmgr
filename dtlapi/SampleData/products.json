@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "Name": "Laptop",
+    "Description": "High-performance laptop for developers",
+    "Price": 1299.99,
+    "Stock": 15,
+    "CreatedAt": "2024-01-01T00:00:00Z",
+    "UpdatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "Id": 2,
+    "Name": "Wireless Mouse",
+    "Description": "Ergonomic wireless mouse with precision tracking",
+    "Price": 49.99,
+    "Stock": 50,
+    "CreatedAt": "2024-01-01T00:00:00Z",
+    "UpdatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "Id": 3,
+    "Name": "Mechanical Keyboard",
+    "Description": "RGB mechanical keyboard with blue switches",
+    "Price": 129.99,
+    "Stock": 25,
+    "CreatedAt": "2024-01-01T00:00:00Z",
+    "UpdatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "Id": 4,
+    "Name": "USB-C Hub",
+    "Description": "Multi-port USB-C hub with HDMI and Ethernet",
+    "Price": 79.99,
+    "Stock": 30,
+    "CreatedAt": "2024-01-01T00:00:00Z",
+    "UpdatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "Id": 5,
+    "Name": "Monitor Stand",
+    "Description": "Adjustable monitor stand with storage drawer",
+    "Price": 89.99,
+    "Stock": 20,
+    "CreatedAt": "2024-01-01T00:00:00Z",
+    "UpdatedAt": "2024-01-01T00:00:00Z"
+  }
+]
