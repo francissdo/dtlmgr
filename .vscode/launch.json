@@ -6,13 +6,14 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/DtlApi/bin/Debug/net9.0/DtlApi.dll",
+            "program": "${workspaceFolder}/dtlapi/bin/Debug/net9.0/DtlApi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/DtlApi",
+            "cwd": "${workspaceFolder}/dtlapi",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/swagger"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
