@@ -23,6 +23,7 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetProducts()
     {
+        Console.WriteLine("GetProducts called - breakpoint should hit here!");
         var products = await _productRepository.GetAllAsync();
         var productDtos = products.Select(p => new ProductDto
         {

@@ -57,18 +57,19 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<ActionResult> Login(LoginModel model)
     {
+
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
 
-        var user = await _userManager.FindByEmailAsync(model.Email);
+        var user = await _userManager.FindByEmailAsync(model?.Email ?? "");
         if (user == null)
         {
             return Unauthorized(new { message = "Invalid credentials" });
         }
 
-        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+        var result = await _signInManager.CheckPasswordSignInAsync(user, model?.Password ?? "", false);
         if (!result.Succeeded)
         {
             return Unauthorized(new { message = "Invalid credentials" });
