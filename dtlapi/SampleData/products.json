@@ -1,47 +1,137 @@
 [
   {
     "Id": 1,
-    "Name": "Laptop",
-    "Description": "High-performance laptop for developers",
+    "Name": "Dell XPS 13 Laptop",
+    "Description": "Ultrabook with Intel Core i7, 16GB RAM, 512GB SSD",
     "Price": 1299.99,
-    "Stock": 15,
-    "CreatedAt": "2024-01-01T00:00:00Z",
-    "UpdatedAt": "2024-01-01T00:00:00Z"
+    "Stock": 12,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
   },
   {
     "Id": 2,
-    "Name": "Wireless Mouse",
-    "Description": "Ergonomic wireless mouse with precision tracking",
-    "Price": 49.99,
-    "Stock": 50,
-    "CreatedAt": "2024-01-01T00:00:00Z",
-    "UpdatedAt": "2024-01-01T00:00:00Z"
+    "Name": "Logitech MX Master 3",
+    "Description": "Advanced wireless mouse with precision tracking and customizable buttons",
+    "Price": 89.99,
+    "Stock": 45,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
   },
   {
     "Id": 3,
-    "Name": "Mechanical Keyboard",
-    "Description": "RGB mechanical keyboard with blue switches",
+    "Name": "Keychron K8 Mechanical Keyboard",
+    "Description": "Wireless mechanical keyboard with hot-swappable switches and RGB backlight",
     "Price": 129.99,
-    "Stock": 25,
-    "CreatedAt": "2024-01-01T00:00:00Z",
-    "UpdatedAt": "2024-01-01T00:00:00Z"
+    "Stock": 28,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
   },
   {
     "Id": 4,
-    "Name": "USB-C Hub",
-    "Description": "Multi-port USB-C hub with HDMI and Ethernet",
-    "Price": 79.99,
-    "Stock": 30,
-    "CreatedAt": "2024-01-01T00:00:00Z",
-    "UpdatedAt": "2024-01-01T00:00:00Z"
+    "Name": "CalDigit TS3 Plus USB-C Hub",
+    "Description": "Professional USB-C dock with Thunderbolt 3, multiple ports",
+    "Price": 249.99,
+    "Stock": 18,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
   },
   {
     "Id": 5,
-    "Name": "Monitor Stand",
-    "Description": "Adjustable monitor stand with storage drawer",
-    "Price": 89.99,
+    "Name": "Herman Miller Monitor Arm",
+    "Description": "Ergonomic adjustable monitor arm with cable management",
+    "Price": 195.00,
+    "Stock": 15,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 6,
+    "Name": "Apple MacBook Air M2",
+    "Description": "Lightweight laptop with M2 chip, 8GB RAM, 256GB SSD",
+    "Price": 1199.00,
+    "Stock": 8,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 7,
+    "Name": "Samsung 27\" 4K Monitor",
+    "Description": "UHD monitor with HDR support and USB-C connectivity",
+    "Price": 399.99,
+    "Stock": 22,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 8,
+    "Name": "Sony WH-1000XM4 Headphones",
+    "Description": "Noise-canceling wireless headphones with premium audio",
+    "Price": 349.99,
+    "Stock": 35,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 9,
+    "Name": "Blue Yeti USB Microphone",
+    "Description": "Professional USB microphone for streaming and recording",
+    "Price": 99.99,
+    "Stock": 40,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 10,
+    "Name": "Anker PowerCore 26800 Power Bank",
+    "Description": "High-capacity portable charger with fast charging support",
+    "Price": 65.99,
+    "Stock": 60,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 11,
+    "Name": "Corsair K95 RGB Platinum",
+    "Description": "Premium mechanical gaming keyboard with macro keys",
+    "Price": 199.99,
     "Stock": 20,
-    "CreatedAt": "2024-01-01T00:00:00Z",
-    "UpdatedAt": "2024-01-01T00:00:00Z"
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 12,
+    "Name": "Razer DeathAdder V3 Pro",
+    "Description": "Wireless gaming mouse with high-precision sensor",
+    "Price": 149.99,
+    "Stock": 32,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 13,
+    "Name": "SteelSeries Arctis 7P Headset",
+    "Description": "Wireless gaming headset with lossless audio",
+    "Price": 179.99,
+    "Stock": 25,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 14,
+    "Name": "ASUS ROG Swift Monitor",
+    "Description": "27\" 144Hz gaming monitor with G-Sync technology",
+    "Price": 549.99,
+    "Stock": 14,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 15,
+    "Name": "Elgato Stream Deck",
+    "Description": "Customizable control surface for content creation",
+    "Price": 149.99,
+    "Stock": 18,
+    "CreatedAt": "2024-08-01T00:00:00Z",
+    "UpdatedAt": "2024-08-01T00:00:00Z"
   }
 ]

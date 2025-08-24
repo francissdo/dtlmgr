@@ -1,7 +1,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace dtlapi.Data
+namespace dtlapi.Data.Providers.SqlServer
 {
     public class SqlServerDataProvider : IDataProvider
     {

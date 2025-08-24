@@ -1,5 +1,11 @@
 using dtlapi.Configuration;
 using dtlapi.Data;
+using dtlapi.Data.Providers.Json;
+using dtlapi.Data.Providers.SqlServer;
+using dtlapi.Data.Providers.PostgreSql;
+using dtlapi.Data.Providers.Xml;
+using dtlapi.Data.Providers.RestApi;
+using dtlapi.Data.Providers.Soap;
 using dtlapi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -84,12 +90,22 @@ switch (databaseSettings.Provider.ToLowerInvariant())
     case "sqlserver":
         builder.Services.AddSingleton<IDataProvider>(provider => 
             new SqlServerDataProvider(databaseSettings.ConnectionString));
-        builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        builder.Services.AddScoped<IProductRepository, SqlServerProductRepository>();
+        builder.Services.AddScoped<IUserRepository, SqlServerUserRepository>();
         break;
     case "postgresql":
         builder.Services.AddSingleton<IDataProvider>(provider => 
             new PostgreSqlDataProvider(databaseSettings.ConnectionString));
-        builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        builder.Services.AddScoped<IProductRepository, PostgreSqlProductRepository>();
+        builder.Services.AddScoped<IUserRepository, PostgreSqlUserRepository>();
+        break;
+    case "xml":
+        var xmlDataPath = Path.IsPathRooted(databaseSettings.DataPath) 
+            ? databaseSettings.DataPath 
+            : Path.Combine(builder.Environment.ContentRootPath, databaseSettings.DataPath);
+        builder.Services.AddSingleton(provider => new XmlDataProvider(xmlDataPath));
+        builder.Services.AddScoped<IProductRepository, XmlProductRepository>();
+        builder.Services.AddScoped<IUserRepository, XmlUserRepository>();
         break;
     case "json":
     default:
@@ -98,11 +114,18 @@ switch (databaseSettings.Provider.ToLowerInvariant())
             : Path.Combine(builder.Environment.ContentRootPath, databaseSettings.DataPath);
         builder.Services.AddSingleton(provider => new JsonDataProvider(dataPath));
         builder.Services.AddScoped<IProductRepository, JsonProductRepository>();
+        builder.Services.AddScoped<IUserRepository, JsonUserRepository>();
         break;
 }
 
 // Register services
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Register external service providers
+builder.Services.AddHttpClient<RestApiProductService>();
+builder.Services.AddHttpClient<RestApiUserService>();
+builder.Services.AddScoped<SoapProductService>();
+builder.Services.AddScoped<SoapUserService>();
 
 // Add CORS
 builder.Services.AddCors(options =>

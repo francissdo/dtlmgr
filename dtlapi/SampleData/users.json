@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Username": "admin",
+    "Email": "admin@dtlmanager.com",
+    "PasswordHash": "$2a$11$rKxH4b0.f7Z0C8qR6j8xfOmP0O2yO1qwV3QxZqYQ1Yk8a9ZU3Q6qi",
+    "CreatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 2,
+    "Username": "john_doe",
+    "Email": "john.doe@example.com",
+    "PasswordHash": "$2a$11$rKxH4b0.f7Z0C8qR6j8xfOmP0O2yO1qwV3QxZqYQ1Yk8a9ZU3Q6qi",
+    "CreatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 3,
+    "Username": "jane_smith",
+    "Email": "jane.smith@example.com",
+    "PasswordHash": "$2a$11$rKxH4b0.f7Z0C8qR6j8xfOmP0O2yO1qwV3QxZqYQ1Yk8a9ZU3Q6qi",
+    "CreatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 4,
+    "Username": "mike_wilson",
+    "Email": "mike.wilson@example.com",
+    "PasswordHash": "$2a$11$rKxH4b0.f7Z0C8qR6j8xfOmP0O2yO1qwV3QxZqYQ1Yk8a9ZU3Q6qi",
+    "CreatedAt": "2024-08-01T00:00:00Z"
+  },
+  {
+    "Id": 5,
+    "Username": "sarah_davis",
+    "Email": "sarah.davis@example.com",
+    "PasswordHash": "$2a$11$rKxH4b0.f7Z0C8qR6j8xfOmP0O2yO1qwV3QxZqYQ1Yk8a9ZU3Q6qi",
+    "CreatedAt": "2024-08-01T00:00:00Z"
+  }
+]

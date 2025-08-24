@@ -6,10 +6,11 @@ I have successfully created a comprehensive full-stack application with the foll
 
 ### 🚀 Backend API (dtlapi)
 - **Framework**: .NET 8.0 Web API
-- **Authentication**: JWT OAuth implementation
+- **Authentication**: JWT OAuth implementation with BCrypt password hashing
 - **Documentation**: Swagger/OpenAPI integration
 - **Data Access**: Dapper ORM with multi-provider support
 - **Database Support**: SQL Server, PostgreSQL, and JSON file storage
+- **Real Database Integration**: Full user and product tables with automated setup scripts
 - **Testing**: Complete unit test suite with xUnit
 - **CORS**: Configured for React frontend integration
 
@@ -29,11 +30,21 @@ dtlmgr/
 ├── dtlapi/                     # .NET Web API
 │   ├── Controllers/            # API endpoints
 │   ├── Models/                 # Data models
-│   ├── Data/                   # Repository pattern with Dapper
+│   ├── Data/                   # Data access layer
+│   │   ├── Interfaces/         # Repository interfaces (IDataProvider, IProductRepository, IUserRepository)
+│   │   └── Providers/          # Database provider implementations
+│   │       ├── Json/           # JSON file-based provider (development)
+│   │       ├── SqlServer/      # SQL Server provider (enterprise)
+│   │       └── PostgreSql/     # PostgreSQL provider (open-source)
 │   ├── Services/               # Business logic & authentication
 │   ├── Configuration/          # App settings classes
+│   ├── Database/               # Database scripts for PostgreSQL and SQL Server
+│   │   ├── PostgreSQL/         # PostgreSQL setup scripts
+│   │   └── SqlServer/          # SQL Server setup scripts
 │   ├── SampleData/             # JSON sample data
-│   └── Scripts/               # Database setup scripts
+│   ├── Scripts/                # Legacy database setup scripts
+│   ├── setup-database.ps1      # PowerShell database setup script
+│   └── setup-database.bat      # Batch database setup script
 ├── dtlapi.Tests/              # Comprehensive unit tests
 ├── dtlmgr/                    # React TypeScript app
 │   └── src/
@@ -47,17 +58,22 @@ dtlmgr/
 ## 🔑 Key Features Implemented
 
 ### Authentication & Security
-- JWT token-based authentication
+- JWT token-based authentication with BCrypt password hashing
 - Protected API endpoints
-- Secure password hashing
+- Real database-backed user management
 - Token expiration handling
-- Demo users: `admin/admin123` and `user/user123`
+- User repository with full CRUD operations
+- Default users: `admin/password123`, `john_doe/password123`, etc.
 
-### Database Flexibility
-- **JSON Provider**: File-based storage for development
-- **SQL Server Provider**: Enterprise database support
-- **PostgreSQL Provider**: Open-source database option
-- Easy switching via configuration
+### Database Management
+- **Provider-Based Architecture**: Clean separation of database providers in organized folders
+- **Automated Setup Scripts**: PowerShell and batch scripts for database initialization
+- **Multi-Provider Support**: JSON (development), SQL Server (enterprise), PostgreSQL (open-source)
+- **User Management**: Complete Users table with authentication
+- **Product Catalog**: Enhanced Products table with realistic data
+- **Database Scripts Organization**: Separate folders for PostgreSQL and SQL Server
+- **Migration Support**: Update scripts for schema changes
+- **Provider Documentation**: Comprehensive README files for each provider
 
 ### Complete CRUD Operations
 - **Create**: Add new products with validation
@@ -79,6 +95,7 @@ dtlmgr/
 - ASP.NET Core Web API
 - Dapper ORM
 - JWT Bearer Authentication
+- BCrypt.Net-Next (Password Hashing)
 - Swagger/OpenAPI
 - xUnit Testing
 - Microsoft.Data.SqlClient

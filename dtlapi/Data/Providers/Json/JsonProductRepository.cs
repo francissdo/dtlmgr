@@ -1,6 +1,6 @@
 using dtlapi.Models;
 
-namespace dtlapi.Data
+namespace dtlapi.Data.Providers.Json
 {
     public class JsonProductRepository : IProductRepository
     {

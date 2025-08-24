@@ -1,7 +1,7 @@
 using dtlapi.Models;
 using Newtonsoft.Json;
 
-namespace dtlapi.Data
+namespace dtlapi.Data.Providers.Json
 {
     public class JsonDataProvider : IDataProvider
     {

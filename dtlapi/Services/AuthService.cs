@@ -1,8 +1,8 @@
+using dtlapi.Data;
 using dtlapi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace dtlapi.Services
@@ -10,37 +10,20 @@ namespace dtlapi.Services
     public class AuthService : IAuthService
     {
         private readonly IConfiguration _configuration;
-        private readonly List<User> _users; // In-memory users for demo
+        private readonly IUserRepository _userRepository;
 
-        public AuthService(IConfiguration configuration)
+        public AuthService(IConfiguration configuration, IUserRepository userRepository)
         {
             _configuration = configuration;
-            // Initialize with demo users
-            _users = new List<User>
-            {
-                new User
-                {
-                    Id = 1,
-                    Username = "admin",
-                    Email = "admin@example.com",
-                    PasswordHash = HashPassword("admin123") // Demo password
-                },
-                new User
-                {
-                    Id = 2,
-                    Username = "user",
-                    Email = "user@example.com",
-                    PasswordHash = HashPassword("user123") // Demo password
-                }
-            };
+            _userRepository = userRepository;
         }
 
-        public Task<AuthResponse?> LoginAsync(LoginRequest request)
+        public async Task<AuthResponse?> LoginAsync(LoginRequest request)
         {
-            var user = _users.FirstOrDefault(u => u.Username == request.Username);
+            var user = await _userRepository.GetByUsernameAsync(request.Username);
             if (user == null || !VerifyPassword(request.Password, user.PasswordHash))
             {
-                return Task.FromResult<AuthResponse?>(null);
+                return null;
             }
 
             var token = GenerateJwtToken(user);
@@ -53,7 +36,7 @@ namespace dtlapi.Services
                 Expiration = expiration
             };
             
-            return Task.FromResult<AuthResponse?>(response);
+            return response;
         }
 
         public string GenerateJwtToken(User user)
@@ -79,17 +62,23 @@ namespace dtlapi.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private static string HashPassword(string password)
+        public static string HashPassword(string password)
         {
-            using var sha256 = SHA256.Create();
-            var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return Convert.ToBase64String(hashedBytes);
+            // Using BCrypt for secure password hashing
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
 
         private static bool VerifyPassword(string password, string hash)
         {
-            var passwordHash = HashPassword(password);
-            return passwordHash == hash;
+            // Using BCrypt for password verification
+            try
+            {
+                return BCrypt.Net.BCrypt.Verify(password, hash);
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

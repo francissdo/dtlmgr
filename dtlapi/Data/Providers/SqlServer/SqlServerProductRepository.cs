@@ -1,13 +1,13 @@
 using dtlapi.Models;
 using Dapper;
 
-namespace dtlapi.Data
+namespace dtlapi.Data.Providers.SqlServer
 {
-    public class ProductRepository : IProductRepository
+    public class SqlServerProductRepository : IProductRepository
     {
         private readonly IDataProvider _dataProvider;
 
-        public ProductRepository(IDataProvider dataProvider)
+        public SqlServerProductRepository(IDataProvider dataProvider)
         {
             _dataProvider = dataProvider;
         }

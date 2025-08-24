@@ -1,7 +1,7 @@
 using System.Data;
 using Npgsql;
 
-namespace dtlapi.Data
+namespace dtlapi.Data.Providers.PostgreSql
 {
     public class PostgreSqlDataProvider : IDataProvider
     {
